@@ -8,7 +8,6 @@ export const getAnswer = async ({
   retrievalChain: Runnable;
 }): Promise<string | undefined> => {
   if (!question) return;
-
   const response = await retrievalChain.invoke({ input: question });
   return response;
 };
