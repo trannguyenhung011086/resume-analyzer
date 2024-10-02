@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020", // The JavaScript version to compile to
+    "module": "CommonJS", // CommonJS is used for Node.js
+    "lib": ["ES2020"], // Include ES2020 lib definitions
+    "outDir": "./dist", // Output directory after compilation
+    "rootDir": "./src", // Root directory for your TypeScript source files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Ensures compatibility with ES Modules
+    "skipLibCheck": true, // Skip type checking of all declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing
+
+    /* Module Resolution */
+    "moduleResolution": "node", // Use Node.js module resolution
+    "baseUrl": ".", // Base directory for resolving non-relative module names
+    "paths": {
+      "@shared/*": ["../packages/shared/*"] // Optional: For monorepo shared package
+    },
+
+    /* Other Options */
+    "allowJs": true, // Allow JavaScript files in TypeScript project
+    "resolveJsonModule": true, // Allow importing JSON modules
+    "noImplicitAny": true, // Disallow usage of variables with implicit any type
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true, // Disallow fallthrough cases in switch statements
+
+    /* Source Maps */
+    "sourceMap": true // Generate source maps for debugging
+  },
+  "include": ["src/**/*.ts"], // Include all TypeScript files in the src directory
+  "exclude": ["node_modules", "dist"] // Exclude node_modules and the output directory
+}
