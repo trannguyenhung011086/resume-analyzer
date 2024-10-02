@@ -1,8 +1,7 @@
 import path from 'path';
-import { getMemoryVectorStore } from './getMemoryVectorStore';
+import { addDocumentToVectorStore } from './addDocumentToVectorStore';
 import { loadDocument } from './loadDocument';
 import { splitDocs } from './splitDocs';
-import lruCache from '../services/lruCache';
 import { MemoryVectorStore } from 'langchain/vectorstores/memory';
 
 /**
@@ -10,25 +9,11 @@ import { MemoryVectorStore } from 'langchain/vectorstores/memory';
  * On production, this should use a vector store on a persistent data store like Postgres.
  */
 export const prepareStore = async (fileId = 'Hung - resume.pdf'): Promise<MemoryVectorStore> => {
-  const filePaths = [path.resolve(__dirname, '../assets/Hung - resume.pdf')];
+  const filePaths = [path.resolve(__dirname, '../assets/', fileId)];
 
   const loadedDocs = await loadDocument(filePaths);
   const splittedDocs = await splitDocs(loadedDocs);
   console.debug('check splittedDocs', { splittedDocs: splitDocs.length });
 
-  const cachedKey = `${fileId}::store`;
-  const cachedStore = lruCache.get(cachedKey);
-
-  if (cachedStore) {
-    console.debug(`found cached store for ${cachedKey}`);
-    return cachedStore as MemoryVectorStore;
-  }
-
-  const store = await getMemoryVectorStore(splittedDocs);
-  if (store) {
-    lruCache.set(cachedKey, store);
-    console.debug(`cached store for ${cachedKey}`);
-  }
-
-  return store;
+  return await addDocumentToVectorStore(splittedDocs);
 };

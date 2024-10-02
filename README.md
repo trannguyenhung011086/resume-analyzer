@@ -1,7 +1,17 @@
 # Resume Q&A Project
 
 This is a learning project to create an OpenAI bot that will be able to answer questions from a PDF resume file.
-For demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-%20resume.pdf) as a pre-defined asset to test it :D
+A practical use case of this is if you are a headhunt and you need to summarize or ask a specific question related to the candidate's skills.
+
+And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-%20resume.pdf) as a pre-defined asset to test it :D
+
+### Demonstated Skills & Concepts
+
+- Set up a Node.js app using Express.js and TypeScript
+- Interact with third-party methods
+- Basic usage of OpenAI flow for parsing and analyzing document
+- Use caching mechanism to avoid exshausting API limits
+- Set up a frontend form to process user input (_TODO_)
 
 ## Folder Structure
 
@@ -38,10 +48,14 @@ Overall flow will be like this:
 - Generate a vector store to store the documents as vector embeddings so that the text can become searchable. For the demo purpose, this will use `MemoryVectorStore` to store in memory instead of using a persistent storage like Postgres using `pgvector` extension.
 - Use `RetrievalQAChain` and set OpenAI's model as LLM and the vector store as the data to process the question from the input.
 
-Notes: to not exhausting OpenAI credits, I use an in-memory `lruCache` object to cache data and result. In reality, we can use Redis cache for this purpose.
+Notes: to not exhausting OpenAI credits, an in-memory `lruCache` object is used to cache data and result. In reality, we can use Redis cache for this purpose.
 
-## Frontend (apps/frontend) - TODO
+A sample response will be like this:
+![Sample](apps/backend/src/assets/sample.png)
 
+## Frontend (apps/frontend)
+
+_TODO_
 Frontend will be a simple HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button. Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
 
 ## Deployment

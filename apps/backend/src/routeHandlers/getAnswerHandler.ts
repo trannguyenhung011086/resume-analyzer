@@ -14,7 +14,7 @@ const getAnswerHandler = async (req: Request, res: Response) => {
     return res.status(500).json({ error: 'Failed to get answer.' });
   }
 
-  return res.json({ answer });
+  return res.json({ data: answer });
 };
 
 export default getAnswerHandler;
