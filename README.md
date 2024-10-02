@@ -13,12 +13,12 @@ And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung
 
 ### Demonstrated Skills
 
-- Set up a Node.js app using Express.js and TypeScript
-- Set up a frontend to process user input with React and Vite (_TODO_)
-- Interact with third-party SDKs like OpenAI
-- Get a basic concept of using OpenAI for parsing and analyzing documents
-- Use caching mechanism to avoid exshausting OpenAI credits
-- Deploy backend and frontend apps separately to fly.io platform as different services like in real world projects (_TODO_)
+[x] Set up a Node.js app using Express.js and TypeScript
+[ ] Set up a frontend to process user input with React and Vite (_TODO_)
+[x] Interact with third-party SDKs like OpenAI
+[x] Get a basic concept of using OpenAI for parsing and analyzing documents
+[x] Use caching mechanism to avoid exshausting OpenAI credits
+[ ] Deploy backend and frontend apps separately to fly.io platform as different services like in real world projects (_TODO_)
 
 ## Folder Structure
 
@@ -80,3 +80,11 @@ Components:
 ## Deployment
 
 The deployment will use fly.io platform to create 2 separate apps for backend and frontend.
+
+## Some improvement ideas:
+
+- Add an endpoint to allow uploading pdf files
+- Add a controller to store pdf files on Postgres
+- Add methods to store questions and answers on Postgres
+- Use Redis to cache answers from OpenAI
+- Use server push event or websocket to stream answer response to frontend
