@@ -1,4 +1,5 @@
 import { Runnable } from '@langchain/core/runnables';
+import { AnswerRecord } from '../types/answer';
 
 export const getAnswer = async ({
   question,
@@ -6,7 +7,7 @@ export const getAnswer = async ({
 }: {
   question: string;
   retrievalChain: Runnable;
-}): Promise<string | undefined> => {
+}): Promise<AnswerRecord | undefined> => {
   const response = await retrievalChain.invoke({ input: question });
   return response;
 };

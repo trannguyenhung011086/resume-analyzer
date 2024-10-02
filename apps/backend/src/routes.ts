@@ -1,9 +1,11 @@
 import { Router } from 'express';
-import getAnswerHandler from './routeHandlers/getAnswerHandler';
 import { withAsyncRequestHandling } from './middlewares/withAsyncRequest';
+import getAnswerHandler from './routeHandlers/getAnswerHandler';
+import getDocumentsHandler from './routeHandlers/getDocumentsHandler';
 
 const router = Router();
 
-router.post('/get-answer', withAsyncRequestHandling(getAnswerHandler));
+router.get('/documents', withAsyncRequestHandling(getDocumentsHandler));
+router.post('/retrieve-answer', withAsyncRequestHandling(getAnswerHandler));
 
 export default router;

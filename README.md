@@ -38,7 +38,7 @@ And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung
 
 ## Backend (apps/backend)
 
-The backend is a simple Express.js app which expose a POST endpoint `/api/get-answer` to pass the question for the document to multiple methods from `langchain` library to retrieve the final answer.
+The backend is an Express.js app which expose an endpoint `POST /api/retrieve-answer` to pass the question for the document to multiple methods from `langchain` library to retrieve the final answer.
 
 Overall flow will be like this:
 ![Flow](apps/backend/src/assets/flow.png)
@@ -56,7 +56,7 @@ A sample response will be like this:
 ## Frontend (apps/frontend)
 
 _TODO_
-Frontend will be a simple HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button. Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
+Frontend will be a HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button. Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
 
 ## Deployment
 
