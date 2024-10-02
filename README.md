@@ -11,14 +11,14 @@ Actually, OpenAI can process many kind of documents. But for a better learning s
 
 And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-%20resume.pdf) as a pre-defined document to verify it :D
 
-### Demonstated Skills
+### Demonstrated Skills
 
 - Set up a Node.js app using Express.js and TypeScript
+- Set up a frontend to process user input with React and Vite (_TODO_)
 - Interact with third-party SDKs like OpenAI
 - Get a basic concept of using OpenAI for parsing and analyzing documents
 - Use caching mechanism to avoid exshausting OpenAI credits
-- Set up a frontend to process user input with React and Vite
-- Deploy backend and frontend apps separately to fly.io platform as different services like in real world projects
+- Deploy backend and frontend apps separately to fly.io platform as different services like in real world projects (_TODO_)
 
 ## Folder Structure
 
@@ -79,4 +79,4 @@ Components:
 
 ## Deployment
 
-The deployment will use fly.io platform to host.
+The deployment will use fly.io platform to create 2 separate apps for backend and frontend.
