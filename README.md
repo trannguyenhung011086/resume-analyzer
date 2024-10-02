@@ -31,6 +31,7 @@ For demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-
 The backend is a simple Express.js app which expose a POST endpoint `/api/get-answer` to pass the question for the document to multiple methods from `langchain` library to retrieve the final answer.
 
 Overall flow will be like this:
+![Flow](apps/backend/src/assets/flow.png)
 
 - Load the PDF document using `PDFLoader`.
 - Split the document using `RecursiveCharacterTextSplitter` into smaller chunks of text.
