@@ -1,17 +1,24 @@
 # Resume Q&A Project
 
-This is a learning project to create an OpenAI bot that will be able to answer questions from a PDF resume file.
-A practical use case of this is if you are a headhunt and you need to summarize or ask a specific question related to the candidate's skills.
+This is a learning project to create an OpenAI bot that will be able to answer questions from a parsed document.
 
-And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-%20resume.pdf) as a pre-defined asset to test it :D
+Some use cases:
 
-### Demonstated Skills & Concepts
+- You are a headhunt and you want to have a quick scan of a candidate's resume to get his/her most notable skills.
+- You are a customer support and you want to upload a Knowledge base document to let users easily ask questions for it.
+
+Actually, OpenAI can process many kind of documents. But for a better learning scope, this project focuses on parsing resume pdf files only.
+
+And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung%20-%20resume.pdf) as a pre-defined document to verify it :D
+
+### Demonstated Skills
 
 - Set up a Node.js app using Express.js and TypeScript
-- Interact with third-party methods
-- Basic usage of OpenAI flow for parsing and analyzing document
-- Use caching mechanism to avoid exshausting API limits
-- Set up a frontend form to process user input (_TODO_)
+- Interact with third-party SDKs like OpenAI
+- Get a basic concept of using OpenAI for parsing and analyzing documents
+- Use caching mechanism to avoid exshausting OpenAI credits
+- Set up a frontend to process user input with React and Vite
+- Deploy backend and frontend apps separately to fly.io platform as different services like in real world projects
 
 ## Folder Structure
 
@@ -40,6 +47,11 @@ And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung
 
 The backend is an Express.js app which expose an endpoint `POST /api/retrieve-answer` to pass the question for the document to multiple methods from `langchain` library to retrieve the final answer.
 
+Endpoints:
+
+- `GET /documents`: return a list of candidate's profiles. For demo purpose, this is an in-memory object instead of using a real database like Postgres.
+- `POST /retrieve-answer`: pass user question for a specific file
+
 Overall flow will be like this:
 ![Flow](apps/backend/src/assets/flow.png)
 
@@ -56,7 +68,14 @@ A sample response will be like this:
 ## Frontend (apps/frontend)
 
 _TODO_
-Frontend will be a HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button. Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
+Frontend will be a HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button.
+Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
+
+Components:
+
+- ProfileList: display a list of candidate's profiles to select.
+- PDFViewer: render the PDF file for selected profile.
+- QuestionForm: render a form for user to input questions for the selected profile.
 
 ## Deployment
 
