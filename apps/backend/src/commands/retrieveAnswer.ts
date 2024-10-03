@@ -41,14 +41,14 @@ const retrieveAnswer = async (
   }
 
   const doc = await documentRepo().getById(fileId);
-  if (!doc?.path) {
+  if (!doc?.url) {
     return {
       outcome: 'error',
       reason: 'File not found',
     };
   }
 
-  const store = await prepareStore(doc.path);
+  const store = await prepareStore(doc.url);
   const retrievalChain = await createQAChain({ vectorStore: store, languageModel: openAiChatModel });
 
   const answerRecord = await getAnswer({ question, retrievalChain });

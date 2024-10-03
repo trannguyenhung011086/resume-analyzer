@@ -5,9 +5,11 @@ const getAnswerHandler = async (req: Request, res: Response) => {
   // For demo purpose, retrieve answer for a pre-defined resume only
   const { question, fileId = 'Hung - resume.pdf' } = req.body;
 
-  if (!question || typeof question !== 'string') {
+  // in reality, we need to have a proper method to check if question is meaningful to proceed
+  if (!question || typeof question !== 'string' || question.length <= 3) {
     return res.status(400).json({ error: 'Please enter a valid question.' });
   }
+
   if (!fileId || typeof fileId !== 'string') {
     return res.status(400).json({ error: 'Please use a valid document.' });
   }

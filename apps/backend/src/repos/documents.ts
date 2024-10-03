@@ -11,6 +11,10 @@ const documentFixtures: DocumentRecord[] = [
     id: 'Hung - resume.pdf',
     url: path.join(__dirname, '../assets/Hung - resume.pdf'),
   },
+  {
+    id: 'resume_sample_student.pdf',
+    url: path.join(__dirname, '../assets/resume_sample_student.pdf'),
+  },
 ];
 
 export const documentRepo = () => {
