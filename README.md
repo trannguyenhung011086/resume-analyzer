@@ -14,7 +14,7 @@ And for demo purpose, I shamelessly use [my resume](apps/backend/src/assets/Hung
 ### Demonstrated Skills
 
 - [x] Set up a Node.js app using Express.js and TypeScript
-- [ ] Set up a frontend to process user input with React and Vite (_TODO_)
+- [x] Set up a frontend to process user input with React and Vite
 - [x] Interact with third-party SDKs like OpenAI
 - [x] Get a basic concept of using OpenAI for parsing and analyzing documents
 - [x] Use caching mechanism to avoid exshausting OpenAI credits
@@ -67,18 +67,20 @@ A sample response will be like this:
 
 ## Frontend (apps/frontend)
 
-_TODO_
 Frontend will be a HTML web page, on which we will render a form where the user can provide questions and click the "Get answer!" button.
 Once we get the answer from OpenAI using the PDF document, we will render the answer on the web page with a button to copy the answer to the clipboard.
 
 Components:
 
-- ProfileList: display a list of candidate's profiles to select.
+- ProfileList: display a list of candidate's profiles to select. The list will be fetched on page load, and the first record is used as default selection.
 - PDFViewer: render the PDF file for selected profile.
 - QuestionForm: render a form for user to input questions for the selected profile.
 
+![Sample FE](apps/backend/src/assets/sample_fe.png)
+
 ## Deployment
 
+_TODO_
 The deployment will use fly.io platform to create 2 separate apps for backend and frontend.
 
 ## Some improvement ideas
