@@ -8,6 +8,11 @@ resource "fly_app" "backend_resume_analyzer" {
   org      = var.fly_org
 }
 
+resource "fly_ip" "ip" {
+  app = fly_app.app.name
+  type = "v4"
+}
+
 resource "fly_machine" "my_machine" {
   app = var.app_name
   image = "registry.fly.io/${var.app_name}:latest"
