@@ -1,0 +1,12 @@
+# Ignore editor files
+*.swp
+*.bak
+*.tmp
+
+# Ignore build artifacts
+dist/
+node_modules/
+
+# Ignore sensitive files
+*.pem
+*.key
