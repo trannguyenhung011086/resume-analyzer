@@ -1,12 +1,17 @@
 provider "docker" {
-  host = "unix:///var/run/docker.sock" # For macOS/Linux
+    host = "unix:///var/run/docker.sock" # For macOS/Linux
+  registry_auth {
+    address  = "registry.fly.io"
+    username = "hung86"
+    password = var.FLY_API_TOKEN
+  }
 }
 
 terraform {
   backend "remote" {
-    organization = "Personal_Hung"
+    organization = var.fly_org
     workspaces {
-      name = "resume-analyzer"
+      name = var.fly_workspace
     }
   }
   required_providers {

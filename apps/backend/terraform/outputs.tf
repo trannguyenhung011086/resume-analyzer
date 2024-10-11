@@ -1,3 +1,3 @@
-output "backend_app_url" {
-  value = fly_app.backend_resume_analyzer.hostname
+output "image" {
+  value = docker_registry_image.my_registry_image.name
 }
