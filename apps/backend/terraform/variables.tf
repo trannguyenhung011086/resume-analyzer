@@ -13,7 +13,7 @@ variable "app_name" {
 }
 
 variable "fly_org" {
-  default = "trannguyenhung011086@gmail.com"
+  default = "personal"
 }
 
 variable "fly_workspace" {
