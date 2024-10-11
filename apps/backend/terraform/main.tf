@@ -9,7 +9,7 @@ resource "fly_app" "backend_resume_analyzer" {
 }
 
 resource "fly_ip" "ip" {
-  app = fly_app.app.name
+  app = fly_app.backend_resume_analyzer.name
   type = "v4"
 }
 
