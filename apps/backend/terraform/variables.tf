@@ -9,7 +9,7 @@ variable "OPEN_AI_API_KEY" {
 }
 
 variable "app_name" {
-  default = "resume_analyzer_api"
+  default = "resume-analyzer-api"
 }
 
 variable "fly_org" {
