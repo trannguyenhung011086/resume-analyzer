@@ -80,8 +80,26 @@ Components:
 
 ## Deployment
 
-_TODO_
 The deployment will use fly.io platform to create 2 separate apps for backend and frontend.
+
+_NOTE 1_
+Fly.io requires a credit card to create fly machine, so the deployment for this app will fail :(
+
+```
+hungtran@Hungs-Mac-mini backend % fly machine create --app resume-analyzer-api --name my_machine registry.fly.io/resume-analyzer-api:latest
+Searching for image 'registry.fly.io/resume-analyzer-api:latest' remotely...
+image found: img_nk3yvlnz2zmdpome
+Image: registry.fly.io/resume-analyzer-api:latest
+Image size: 163 MB
+
+Error: could not launch machine: failed to launch VM: machines are disabled for this organization (Request ID: 01JA3654R1ESFQV2R3EC1RFAGJ-hkg)
+```
+
+_NOTE 2_
+Reference to use Terraform with Fly provider, but they are abandonned now :(
+
+- https://github.com/fly-apps/terraform-provider-fly/blob/main/examples/main.tf
+- https://github.com/fly-apps/terraformed-machines/blob/main/main.tf
 
 ## Some improvement ideas
 

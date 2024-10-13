@@ -57,9 +57,9 @@ resource "fly_machine" "my_machine" {
   ]
 }
 
-resource "fly_volume" "data" {
-  app = var.app_name
-  region = var.fly_region
-  name = "data"
-  size =  1
-}
+# resource "fly_volume" "data" {
+#   app = var.app_name
+#   region = var.fly_region
+#   name = "data"
+#   size =  1
+# }
