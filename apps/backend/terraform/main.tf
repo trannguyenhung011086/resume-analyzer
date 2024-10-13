@@ -24,7 +24,7 @@ resource "fly_machine" "my_machine" {
   app = var.app_name
   image = "registry.fly.io/${var.app_name}:latest"
   # image = "nginx" 
-  region = "hkg"
+  region = var.fly_region
   services = [
     {
       ports = [
@@ -55,4 +55,11 @@ resource "fly_machine" "my_machine" {
       "internal_port" : 8089
     }
   ]
+}
+
+resource "fly_volume" "data" {
+  app = var.app_name
+  region = var.fly_region
+  name = "data"
+  size =  1
 }

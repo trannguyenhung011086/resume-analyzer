@@ -19,3 +19,7 @@ variable "fly_org" {
 variable "fly_workspace" {
   default = "resume-analyzer"
 }
+
+variable "fly_region" {
+  default = "hkg"
+}
