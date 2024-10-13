@@ -20,7 +20,7 @@ terraform {
     # }
     fly = {
       source = "fly-apps/fly"
-      version = "0.0.7"
+      version = "0.0.18"
     }
   }
 }

@@ -22,7 +22,8 @@ resource "fly_ip" "exampleIpv6" {
 
 resource "fly_machine" "my_machine" {
   app = var.app_name
-  image = "nginx" # "registry.fly.io/${var.app_name}:latest"
+  image = "registry.fly.io/${var.app_name}:latest"
+  # image = "nginx" 
   region = "hkg"
   services = [
     {
